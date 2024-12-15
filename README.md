@@ -6,11 +6,13 @@ pandas (pour la manipulation des données CSV).
 colorama (pour l'affichage coloré dans le terminal).
 Étapes d'installation
 Clonez ce dépôt Git ou téléchargez le fichier main.py :
+
 bash
 Copier le code
 git clone <URL_DU_DEPOT>
 cd inventory_manager
 Installez les dépendances nécessaires en utilisant le fichier requirements.txt :
+
 bash
 Copier le code
 pip install -r requirements.txt
@@ -19,8 +21,7 @@ Si le fichier requirements.txt n'est pas disponible, installez manuellement les 
 bash
 Copier le code
 pip install pandas colorama
-Test de l'installation
-Pour vérifier que tout est correctement installé, lancez le script :
+Testez l'installation en lançant le script :
 
 bash
 Copier le code
