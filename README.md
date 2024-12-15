@@ -1,89 +1,88 @@
-Guide d’installation
-Prérequis
-Python 3.8+ doit être installé sur votre machine. Téléchargez-le ici : Python Downloads.
-Les bibliothèques nécessaires sont :
-pandas (pour la manipulation des données CSV).
-colorama (pour l'affichage coloré dans le terminal).
-Étapes d'installation
-Clonez ce dépôt Git ou téléchargez le fichier main.py :
+# Guide d'installation et d'utilisation du programme de gestion d'inventaire
 
-bash
-Copier le code
-git clone <URL_DU_DEPOT>
-cd inventory_manager
-Installez les dépendances nécessaires en utilisant le fichier requirements.txt :
+## Introduction
+Ce document explique comment installer et utiliser le programme de gestion d'inventaire, une application en ligne de commande (CLI) pour gérer un inventaire à partir de fichiers CSV.
 
-bash
-Copier le code
-pip install -r requirements.txt
-Si le fichier requirements.txt n'est pas disponible, installez manuellement les bibliothèques :
+## Prérequis
+### Python
+- Assurez-vous que Python 3.6 ou une version ultérieure est installé sur votre système.
+- [Téléchargez Python ici](https://www.python.org/downloads/).
+- Vérifiez l'installation avec :
+  ```bash
+  python --version
+  ```
 
-bash
-Copier le code
-pip install pandas colorama
-Testez l'installation en lançant le script :
+### pip
+- L'outil de gestion des paquets Python est requis pour installer les dépendances.
+- Pip est généralement inclus avec Python. Vérifiez avec :
+  ```bash
+  pip --version
+  ```
 
-bash
-Copier le code
+### Modules Python nécessaires
+- `pandas`
+- `colorama`
+
+## Installation
+### Étape 1 : Cloner ou télécharger le projet
+Téléchargez le projet à partir du dépôt ou copiez les fichiers du programme dans un répertoire local.
+
+### Étape 2 : Installer les dépendances
+1. Ouvrez un terminal et naviguez vers le dossier contenant le fichier principal (`main.py`).
+2. Installez les dépendances requises avec la commande suivante :
+   ```bash
+   pip install pandas colorama
+   ```
+
+## Utilisation
+### Lancer le programme
+En mode interactif :
+```bash
 python main.py
-Exemples d’utilisation
-Une fois l’application lancée, utilisez les commandes suivantes pour manipuler votre inventaire.
+```
 
-1. Charger des fichiers CSV
-Consolidez plusieurs fichiers CSV situés dans un même dossier en une base unique :
+### Commandes disponibles
+#### Commandes interactives
+- **load** : Charger les fichiers CSV d'un dossier dans la base de données.
+  - **Syntaxe** : `load <chemin_du_dossier>`
+  - **Exemple** :
+    ```bash
+    load data/
+    ```
 
-bash
-Copier le code
-load <chemin_du_dossier>
-Exemple :
+- **search** : Rechercher un produit ou une catégorie dans l'inventaire.
+  - **Syntaxe** : `search <colonne=valeur>`
+  - **Exemple** :
+    ```bash
+    search category=electronics
+    ```
 
-bash
-Copier le code
-load ./stocks
-Cela charge tous les fichiers CSV du dossier stocks.
+- **summary** : Générer un rapport récapitulatif des quantités et des prix moyens par catégorie.
+  - **Syntaxe** : `summary <chemin_du_fichier>`
+  - **Exemple** :
+    ```bash
+    summary summary_report.csv
+    ```
 
-2. Rechercher dans l’inventaire
-Effectuez une recherche dans une colonne spécifique. La syntaxe est :
+- **show** : Afficher les premières lignes de la base de données.
+  - **Syntaxe** : `show <nombre_de_lignes>`
+  - **Exemple** :
+    ```bash
+    show 10
+    ```
 
-bash
-Copier le code
-search <colonne=valeur>
-Exemple :
+- **exit** : Quitter le programme interactif.
+  - **Syntaxe** : `exit`
 
-bash
-Copier le code
-search category=Electronics
-Recherche tous les produits de la catégorie Electronics.
+#### Options en ligne de commande
+Vous pouvez également utiliser les options suivantes sans lancer le mode interactif :
 
-3. Afficher les premières lignes de la base
-Affichez les premières lignes pour vérifier les données consolidées :
+- `--load <chemin_du_dossier>` : Charger les fichiers CSV.
+- `--search <colonne=valeur>` : Rechercher un produit ou une catégorie.
+- `--summary <chemin_du_fichier>` : Générer un rapport récapitulatif.
+- `--show <nombre>` : Afficher les premières lignes.
+- `--exit` : Quitter le programme immédiatement.
 
-bash
-Copier le code
-show <nombre_de_lignes>
-Exemple :
-
-bash
-Copier le code
-show 10
-Affiche les 10 premières lignes.
-
-4. Générer un rapport récapitulatif
-Créez un rapport résumant les quantités et le prix moyen par catégorie. La commande est :
-
-bash
-Copier le code
-summary <chemin_du_fichier_exporté>
-Exemple :
-
-bash
-Copier le code
-summary ./rapport_inventaire.csv
-Génère un fichier rapport_inventaire.csv contenant le résumé.
-
-5. Quitter l’application
-Pour quitter l’application, utilisez :
-
-bash
-Copier le code
-exit
+**Exemple combiné** :
+```bash
+python main.py --load data/ --summary summary_report.csv
