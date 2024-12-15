@@ -78,3 +78,18 @@ Génère un fichier `rapport_inventaire.csv` contenant le résumé.
 Pour quitter l’application, utilisez :
 ```bash
 exit
+```
+
+### Options en ligne de commande
+Vous pouvez également utiliser les options suivantes sans lancer le mode interactif :
+
+- `--load <chemin_du_dossier>` : Charger les fichiers CSV.
+- `--search <colonne=valeur>` : Rechercher un produit ou une catégorie.
+- `--summary <chemin_du_fichier>` : Générer un rapport récapitulatif.
+- `--show <nombre>` : Afficher les premières lignes.
+- `--exit` : Quitter le programme immédiatement.
+
+**Exemple combiné** :
+```bash
+python main.py --load data/ --summary summary_report.csv
+```
