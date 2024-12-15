@@ -1,4 +1,4 @@
-# Guide d'installation et d'utilisation du programme de gestion d'inventaire
+# Guide d'installation des compléments et autres pour utilisation du script
 
 ## Introduction
 Ce document explique comment installer et utiliser le programme de gestion d'inventaire, une application en ligne de commande (CLI) pour gérer un inventaire à partir de fichiers CSV.
